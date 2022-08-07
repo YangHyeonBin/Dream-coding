@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* 768 미만 화면 기준 */
+.nav {
+  background-color: #002f6c;
+  padding: 2.5% 5% 0 5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #002f6c; */
+  color: white;
+  /* margin-bottom: 3%; */
+  padding-bottom: 3%;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.hamburger {
+  background-color: #002f6c;
+  color: yellow;
+  border: none;
+  font-size: 200%;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  color: white;
+  margin-bottom: 2%;
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+  width: 100%;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5% 0;
+}
+
+.menu:hover {
+  cursor: pointer;
+  background-color: yellow;
+  border-radius: 4px;
+}
+
+.menu a:hover {
+  color: #002f6c;
+}
+
+.socials {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  padding-bottom: 3%;
+}
+
+.social a {
+  display: inline-block;
+  padding: 2px 5px;
+}
+
+.social a:hover {
+  color: #002f6c;
+  background-color: yellow;
+  border-radius: 4px;
+}
+
+.unshow {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5% 5%;
+  }
+
+  .header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* margin-right: 15%; */
+    flex: 2;
+  }
+
+  .menus {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    /* margin: 0 15%; */
+    flex: 4;
+  }
+
+  .menu {
+    margin: 0;
+  }
+
+  .menu a {
+    /* margin-right: 5%; */
+    padding: 2% 5%; /* 터치 영역 확보 */
+  }
+
+  /* .menu:last-child {
+    margin: 0;
+  } */
+
+  .socials {
+    padding: 0;
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
