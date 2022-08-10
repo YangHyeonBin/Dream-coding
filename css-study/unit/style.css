@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.component {
+  width: 50%; /* 부모의 절반. 현재 부모는 body, body의 부모는 html -> 화면 크기가 바뀐다고 해서 font-size가 자동으로 바뀌는 것은 아니므로 em, rem을 쓰는 것은 반응형을 위해 적절하지 않음. em, rem은 font-size를 기준으로 하기 때문. 화면 크기가 바뀐다는 것은 부모의 width, height가 바뀐다는 것이므로, %를 사용하면 요소의 크기가 부모 요소를 기준으로 원하는 비율(50% 등)을 유지하기 위해 화면 크기에 맞춰 변화함 */
+  border: 1px solid burlywood;
+  font-size: 2rem; /* root 요소인 html 요소의 font-size의 2배, html 요소의 font-size는 브라우저에 정한 16px의 100%이므로 현재 16px, 따라서 2rem=32px */
+  /* .title을 heading 대신 h1을 쓸 경우, h1에 user agent style로 2em이 들어가 있어서, 여기에 font-size: 2rem을 적으면, .title의 폰트 사이즈가 16px의 2배의 2배인 64px이 됨. */
+}
+
+.title {
+  background-color: burlywood;
+  /* padding: 1em; */ /* 자기 자신의 글자 크기(=32px)와 같음 */
+  padding: 0.5em 1rem; /* title과 contents의 정렬을 위해 좌우 여백은 동일한 크기로 주는 것이 나음 -> em보다 rem이 적절 */
+}
+
+.contents {
+  font-size: 1rem;
+  /* padding: 1em; */ /* 자기 자신의 글자 크기(=16px)와 같음 */
+  padding: 0.5em 1rem;
+}
+
+@media screen and (max-width: 780px) {
+  .component {
+    font-size: 1.5rem;
+  }
+}

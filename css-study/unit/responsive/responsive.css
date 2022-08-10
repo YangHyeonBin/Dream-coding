@@ -1,0 +1,33 @@
+h1 {
+  font-size: 1.75rem;
+  color: burlywood;
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  padding: 2em;
+}
+
+.component {
+  border: 1px solid burlywood;
+  margin: 1em; /* 화면 크기에 따라 폰트 사이즈 변경할 것임 -> 그것에 맞게 패딩, 마진 변하길 바라서 em 사용 */
+}
+
+.title {
+  font-size: 1.5rem;
+  padding: 1em 1rem;
+  background-color: burlywood;
+}
+
+.contents {
+  font-size: 1.125rem;
+  padding: 1em 1rem;
+}
+
+@media screen and (max-width: 48rem) { /* 768px 대신 48rem 쓴 이유: 사용자가 브라우저 설정에서 폰트 사이즈를 조정했을 때, 그것에 맞게 미디어 쿼리 적용되도록 */
+  .container {
+    flex-direction: column;
+  }
+}
