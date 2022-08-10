@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Containing Block</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <p>안녕</p>
+    <article>
+      여기에 뭘 쓰면 .paragraph의 마진이 부모인 article 안에 들어온다는 소식! ->
+      <a
+        href="https://www.youtube.com/watch?v=c19Mjg-ivxc"
+        target="_blank"
+        rel="noreferrer"
+        >마진 병합 현상 때문에 발생</a
+      >, 모든 요소에 margin: 0을 줬기에 article의 margin: 0과 인접한 블록 요소인
+      p의 margin: 5%가 겹쳐져 article 위에 margin이 들어간 것처럼 보이게 된...
+      <p class="paragraph">Lorem ipsum dolor</p>
+    </article>
+  </body>
+</html>

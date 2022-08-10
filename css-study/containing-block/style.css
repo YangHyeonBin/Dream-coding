@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: bisque;
+}
+
+article {
+  display: block;
+  width: 400px;
+  height: 400px;
+  /* margin: 5%; 부모인 body의 width의 5%만큼 여백 생김 */
+  /* padding: 5%; 이게 있으면 .paragraph의 마진이 article 안에 생기고, 없으면 article 밖에 생긴다..! */
+  /* article의 contents 박스 height는 160px, .paragraph의 height+padding(top, bottom)+margin(top, bottom)=120px -> 부모 요소인 article의 contents 박스 안에 들어올 수 있는 크기인데도 margin이 부모 요소의 밖에 생기는 이유는? */
+  /* 부모 요소와 자식 요소 사이에 공간을 주기 위해선 부모 요소에 padding을 주는 방법뿐? */
+  background: lightblue;
+  /* overflow: hidden; */
+}
+
+.paragraph {
+  width: 50%;
+  height: 50%;
+  margin:5%; /* 400px의 5% */
+  padding: 5%; /* 400px의 5% */
+  background: lightpink;
+}
+
+/* 
+마진 병합 현상 발생 조건
+1. 인접해 있는 **block** 요소들이어야 함
+2. 상하단으로만 발생 (좌우 X)
+*/
+
+/* 
+마진 병합 현상으로 인해 마진이 의도와 다르게 적용될 때, 마진 병합 현상이 일어나지 않게 바꾸는 방법
+1. 부모 요소 컨텐츠 박스에 내용물을 넣는다
+2. 부모 요소에 padding을 추가
+3. 부모 요소에 border를 추가 (1px solid transparent)
+*/
+
+/* 
+위의 방법들은 원하는 레이아웃과 달라질 수 있음,
+: 인접한 **block** 요소 사이에 발생하는 현상이므로, 자식 요소의 display 값을 inline-block으로 변경!
+그러나 이럴 경우, 자식 요소들 간의 마진 병합 현상(상식적인 레이아웃을 위해 필요)까지 상쇄됨
+*/
+
+/* 
+가장 좋은 해결법: 부모 요소에 overflow: hidden;
+-> 부모 요소와 자식 요소의 마진을 별개로 만들어 줌
+*/
