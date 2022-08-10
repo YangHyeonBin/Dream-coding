@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  font-size: 1rem; /* =16px */
+  padding: 1em; /* =1rem */
+}
+
+section {
+  background-color: skyblue;
+  margin-bottom: 1rem;
+  /* padding: 2% 2%; */ /* =15px -> 100%=750px일텐데, 현재 viewport-width이자 section의 width가 750.4px임! 현재 viewport-height이자 section의 height는 224.4px -> width만을 기준으로 잡음을 알 수 있음 */
+  width: 100%;
+  height: 100%;
+  padding: 1em; /* =16px */
+}
+
+.px {
+  width: 200px;
+  background-color: pink;
+}
+
+.percent {
+  width: 40%;
+  background-color: aquamarine;
+}
+
+.wrapper {
+  width: 400px;
+  border: 5px solid rebeccapurple;
+  background-color: beige;
+  padding: 2%; /* =14.4px -> 100%=720px, 정확히 뭘 기준으로 잡았는진 못 찾았지만, 부모 요소의 width와 그나마 제일 비슷한 크기를 기준으로 잡는 듯함... */
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 0.5em; /* =8px */
+}
+
+/* 
+1. 요소의 width, height, padding 등을 %로 정하면 뷰포트 사이즈 변화에 맞춰 그 값들도 변화함
+2. 요소의 width, height, padding 등을 em으로 정하면, 미디어 쿼리로 font-size를 변경해주지 않는 한, 뷰포트 사이즈 변화에는 반응하지 않음. 대신, 브라우저 설정에서 기본 폰트 사이즈를 변경할 때 값이 함께 변화함. 
+*/
