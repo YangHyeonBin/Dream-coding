@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.flex {
+  background: #6AB6D8;
+  padding: 10px;
+  border: 3px solid #2E86BB;
+  color: white;
+  text-align: center;
+  width: 30px;
+}
+
+.flex1 {
+  flex-basis: auto;
+}
+
+.flex2 {
+  flex-basis: max-content;
+}
+
+.flex3 {
+  flex-basis: min-content;
+}
+
+.flex4 {
+  flex-basis: fit-content;
+}
+
+.flex5 {
+  flex-basis: 200px;
+}

@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #f5f7f8;
+  font-family: "Poppins", sans-serif;
+  padding: 20px 0;
+}
+
+/* typography */
+h1 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  color: #333;
+}
+
+.place span {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #999;
+  margin-top: 2em;
+}
+
+/* 
+grid 사용 연습 
+- 모바일: 한 줄에 한 아이템씩 
+- 태블릿: 첫 아이템이 한 줄 다 차지, 다음 아이템들은 한줄에 2개씩
+- pc: 첫 아이템이 2칸 차지, 첫 줄에 3개, 둘째 줄에 4개의 아이템
+*/
+
+/* 
+background 사용 연습
+<img> 대신 background 속성 사용해 이미지 넣어보기
+*/
+
+.seoul {
+  background: url('https://images.unsplash.com/photo-1601621915196-2621bfb0cd6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2VvdWx8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60');
+}
+
+.huinnyeoul {
+  background: center url('https://media.istockphoto.com/photos/huinnyeoul-culture-village-and-harbor-city-view-in-busan-korea-picture-id1293414404?b=1&k=20&m=1293414404&s=170667a&w=0&h=_Pnn3y7l7075ZobAd-r_kNK6VtOy2kqc-OQ4PpF5eC0=');
+}
+
+.vladivostok {
+  background: url('https://images.unsplash.com/photo-1587637885131-8b08567433d6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dmxhZGl2b3N0b2t8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60');
+}
+
+.geoje {
+  background: url('https://media.istockphoto.com/photos/hydrangea-flowers-in-geoje-island-picture-id1264627000?b=1&k=20&m=1264627000&s=170667a&w=0&h=E2FYAbyYwFQ6HXRZWrWRsp4hXfk2OuQ0Evv9ai_oKR0=');
+}
+
+.jeju {
+  background: url('https://images.unsplash.com/photo-1579169825453-8d4b4653cc2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8amVqdXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60');
+}
+
+.daegwallyeong {
+  background: url('https://media.istockphoto.com/photos/dry-grass-field-and-mountain-and-snow-and-winter-landscape-in-sheep-picture-id907925056?b=1&k=20&m=907925056&s=170667a&w=0&h=XXqo1ikxY-GSTSraSmldLxtfTCDJ6CdQEGD5exW8vkQ=');
+}
+
+.jeonju {
+  background: url('https://images.unsplash.com/photo-1548115184-bc6544d06a58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8amVvbmp1fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60');
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1em;
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.place {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  /* padding: 1em; */
+  box-shadow: 0 4px 16px 0 rgba(17, 17, 26, 0.05), 0 8px 32px 0 rgba(17, 17, 26, 0.05);
+  background-color: #fff;
+  display: flex; /* 백그라운드 이미지 가진 div(.thumbnail)와 글 묶음인 article을 세로 방향으로 정렬하기 위해 */
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: top 100ms ease-out;
+}
+
+.place:hover {
+  top: -0.2em;
+  box-shadow: 0 4px 16px 0 rgba(17, 17, 26, 0.08), 0 8px 32px 0 rgba(17, 17, 26, 0.08);
+}
+
+.thumbnail {
+  /* background-image */
+  padding-bottom: 60%;
+  background-size: cover;
+  background-position: center center;
+
+  /* img */
+  /* display: block;
+  width: 100%;
+  height: 60%; */
+}
+
+.place article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  /* min-height: 100%; 사진 영역을 padding을 이용해 확보해서, article이 height를 100%로 유지하려 하면 부모인 place(=flex-container)의 height 영역을 뚫고 아래로 내려가, 아래 영역의 요소와 겹침 */
+  /* margin-top: 0.5em; */
+  padding: 1em;
+}
+
+.place article p {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .place:first-child {
+    grid-column: 1/3;
+    /* grid-row: 1/2; */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

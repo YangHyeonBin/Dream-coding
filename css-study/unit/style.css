@@ -9,6 +9,7 @@
   border: 1px solid burlywood;
   font-size: 2rem; /* root 요소인 html 요소의 font-size의 2배, html 요소의 font-size는 브라우저에 정한 16px의 100%이므로 현재 16px, 따라서 2rem=32px */
   /* .title을 heading 대신 h1을 쓸 경우, h1에 user agent style로 2em이 들어가 있어서, 여기에 font-size: 2rem을 적으면, .title의 폰트 사이즈가 16px의 2배의 2배인 64px이 됨. */
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -27,4 +28,12 @@
   .component {
     font-size: 1.5rem;
   }
+}
+
+/* testing overflow */
+/* overflow: block-container, flex-container, grid-container */
+.lorem {
+  height: 400px;
+  overflow: auto; /* 세로 스크롤만 자동 생성됨 */
+  /* overflow: scroll; */ /* 가로 세로 스크롤 자동 생성됨 -> overflow-x, overflow-y를 합한 단축 속성이기 때문! */
 }
