@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-content {
+  position: relative;
+  background-color: aliceblue;
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 4px 7px 30px 0px;
+}
+
+.close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.open {
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5em 1em;
+  color: white;
+  background-color: #0066ff;
+  border: none;
+  border-radius: 24px;
+}
+
+.open:hover {
+  background-color: blue;
+}
+
+.hidden {
+  display: none;
+  /* transition: display 2000ms ease-in; */
+  /* display: none이 있는 경우는 정상적으로 transition 적용 불가! */
+}
