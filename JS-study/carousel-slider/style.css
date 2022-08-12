@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#slider {
+  width: 100%;
+  position: relative;
+}
+
+.slider__item {
+  width: 100%;
+  height: 15em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+
+  /* position absolute일 때 z-index 값을 지정하면 (cf. 기본값=auto) 새 쌓임 맥락 생성! */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  /* 변화가 자연스럽게 */
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+
+  /* 좀 더 쿨한 액션 넣기 */
+  transform: scale(0.95);
+}
+
+.slider__item:nth-child(odd) {
+  background-color: #8e44ad;
+}
+
+.slider__item:nth-child(even) {
+  background-color: #3498db;
+}
+
+.showing {
+  /* 이 클래스 가지면 z-index: 0인 다른 아이템들보다 늦게 렌더링 됨 = 가장 위에 쌓임! */
+  z-index: 1;
+  opacity: 1;
+  transform: none;
+}
+
+/* 화살표 */
+.before, .after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.before {
+  left: 1em;
+}
+
+.after {
+  right: 1em;
+}
+
